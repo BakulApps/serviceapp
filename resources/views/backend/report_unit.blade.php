@@ -22,7 +22,7 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="unit_nopol">Nomor Polisi</label>
+                                <label for="unit_nopol">Cari Unit</label>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <select class="form-control transaction_unit" data-placeholder="Pilih Unit" data-fouc>
@@ -30,6 +30,10 @@
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="unit_nopol">Nomor Polosi</label>
+                                <input type="text" id="unit_nopol" class="form-control" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="unit_merk">Merk</label>
@@ -66,7 +70,6 @@
                         <th>Keterangan</th>
                         <th>Masuk</th>
                         <th>Status</th>
-                        <th>Aksi</th>
                     </tr>
                     </thead>
                 </table>

@@ -38,7 +38,6 @@ var reportunitjs = function () {
                 {className: 'text-center', targets: 3},
                 {className: 'text-center', targets: 4},
                 {className: 'text-center', targets: 5},
-                {className: 'text-center', targets: 6},
             ],
         }).on('click', '.btn-edit', function (e) {
             e.preventDefault();

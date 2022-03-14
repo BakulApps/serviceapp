@@ -22,6 +22,10 @@ class Transaction extends Model
     {
         return Carbon::parse($this->transaction_date_in)->translatedFormat('d M Y');
     }
+    public function date_finish()
+    {
+        return Carbon::parse($this->transaction_date_finish)->translatedFormat('d M Y');
+    }
     public function garage()
     {
         return $this->hasOne(

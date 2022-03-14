@@ -13,13 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'MainController@home')->name('home');
+Route::match(['get', 'post'],'/', 'HomeController@index')->name('home');
 Route::match(['get', 'post'], '/registrasi', 'MainControler@registration')->name('register');
 Route::match(['get', 'post'], '/cekstatus', 'MainController@check')->name('check');
 Route::match(['get', 'post'], '/masuk', 'AuthController@login')->name('login');
 Route::get('/logout', 'AuthController@logout')->name('logout');
 Route::match(['get', 'post'], '/api/master', 'AdminController@api')->name('api');
 
+Route::get('/test', function (){
+    $unit =  \App\Models\Master\Unit::find(592)->first();
+    return $unit->transaction->where('transaction_unit', 592);
+});
 Route::group(['prefix' => 'administrator', 'middleware' => 'auth.admin'], function (){
     Route::get('/', 'AdminController@home')->name('admin.home');
     Route::match(['get', 'post'], '/master/unit', 'MasterController@unit')->name('admin.master.unit');
